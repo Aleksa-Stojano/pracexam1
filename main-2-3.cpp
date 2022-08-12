@@ -1,9 +1,9 @@
 #include <stdio.h>
 
-extern int bin_to_int(int binary_digits[], int number_of_digits);
+extern int palindrome_sum(int integers[], int length);
 
 int main() {
-  int array1[30] = {0};
-  printf("%d", bin_to_int(array1, 0));
+  int array1[4] = {1, 2, 2, 1};
+  printf("%d", palindrome_sum(array1, 4));
   return 0;
 }

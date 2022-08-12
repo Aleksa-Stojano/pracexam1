@@ -1,20 +1,24 @@
 #include <stdio.h>
 
-int bin_to_int(int binary_digits[], int number_of_digits) {
-  int decimal = 0;
-  int power = 1;
+bool is_array_palindrome(int integers[], int length);
+int sum_integers(int integers[], int length);
 
-  for (int i = 1; i < number_of_digits; i++) {
-    power = power * 2;
+int palindrome_sum(int integers[], int length) {
+  if (length < 1) {
+    return -1;
+  } else if (is_array_palindrome(integers, length) == false) {
+    return -2;
+  } else {
+    return sum_integers(integers, length);
   }
+}
 
-  for (int i = 0; i < number_of_digits; i++) {
-    decimal += binary_digits[i] * power;
-    power = power / 2;
-    // printf("%d\n", decimal);
-    // printf("%d\n", binary_digits[i]);
-    // printf("%d\n", power);
+bool is_array_palindrome(int integers[], int length) { return false; }
+
+int sum_integers(int integers[], int length) {
+  int sum = 0;
+  for (int i = 0; i < length; i++) {
+    sum += integers[i];
   }
-
-  return decimal;
+  return sum;
 }
